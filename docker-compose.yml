@@ -1,0 +1,18 @@
+ubuntu:
+  container_name: ci_drone
+  build: .
+  ports:
+    - "80:8000"
+  links:
+    - db
+  command: drone
+
+db:
+  container_name: ci_postgresdb
+  image: postgres:9.4.5
+  environment:
+    - "POSTGRES_USER=drone"
+    - "POSTGRES_PASSWORD=asd567okm"
+    - "POSTGRES_DB=drone"
+  ports:
+    - "5432:5432"
