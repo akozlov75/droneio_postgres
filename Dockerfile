@@ -19,13 +19,13 @@ RUN apt-get clean
 ENV DATABASE_DRIVER postgres
 ENV DATABASE_CONFIG postgres://drone:asd567okm@db:5432/drone?sslmode=disable
 
-# GitHub auth
+# GitHub users auth
 ENV REMOTE_DRIVER github
-ENV REMOTE_CONFIG https://github.com?client_id=34cf72fde9f6b7216dd3&client_secret=7db2807112e50660a95ea6d82a3b639f00555590
+ENV REMOTE_CONFIG https://github.com?client_id={client id here}&client_secret={client secret here}
 
-# Bitbucket auth
-# DRONE_BITBUCKET_CLIENT
-# DRONE_BITBUCKET_SECRET
+# Bitbucket users auth
+# ENV REMOTE_DRIVER bitbucket
+# ENV REMOTE_CONFIG https://bitbucket.org?client_id={client id here}&client_secret={client secret here}
 
 # Install drone
 RUN wget http://downloads.drone.io/0.4.0/drone.deb
